@@ -391,13 +391,6 @@ export default function Home() {
         {showProofPanel && (
           <div className="mb-8 space-y-5">
             <div className="rounded-lg border border-[#FFC700] bg-[#FFFCF5] p-5 shadow-sm">
-              <div className="mb-4">
-                <div className="flex items-center gap-2 mb-1.5">
-                  <span className="text-lg">🎯</span>
-                  <h2 className="text-[16px] font-semibold text-[#37352F]">Demo Mode: Proof of Real Integration</h2>
-                </div>
-              </div>
-
               <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-3">
                 <Button
                   onClick={() => handleWeatherCheck("Marcus Johnson", "San Francisco")}
