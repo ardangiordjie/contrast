@@ -18,8 +18,8 @@ export async function POST(request: NextRequest) {
     let agentmail: any = null
     if (process.env.AGENTMAIL_API_KEY) {
       try {
-        const AgentMail = require("agentmail")
-        agentmail = new AgentMail({ apiKey: process.env.AGENTMAIL_API_KEY })
+        const { AgentMailClient } = require("agentmail")
+        agentmail = new AgentMailClient({ apiKey: process.env.AGENTMAIL_API_KEY })
         console.log("[AgentMail] SDK initialized successfully")
       } catch (err) {
         console.error("[AgentMail] SDK initialization error:", err)
