@@ -49,10 +49,10 @@ export async function POST(request: NextRequest) {
           name: "Photography Agent",
         })
 
-        console.log(`[AgentMail] Inbox created: ${inbox.id}`)
+        console.log(`[AgentMail] Inbox created: ${inbox.inboxId}`)
 
         // Now send email from this inbox using the correct API
-        const result = await agentmail.inboxes.messages.send(inbox.id, {
+        const result = await agentmail.inboxes.messages.send(inbox.inboxId, {
           to: [email],
           subject: `Photography Quote for ${name}`,
           body: `Hi ${name}!
@@ -82,7 +82,7 @@ Contrast Photography Team`,
         })
 
         emailSent = true
-        emailId = result?.id || inbox.id
+        emailId = result?.id || inbox.inboxId
         service = "AgentMail"
         console.log("[AgentMail] Email sent successfully!")
         console.log("[AgentMail] Message ID:", emailId)
