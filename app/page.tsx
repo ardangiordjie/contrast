@@ -396,10 +396,6 @@ export default function Home() {
                   <span className="text-lg">🎯</span>
                   <h2 className="text-[16px] font-semibold text-[#37352F]">Demo Mode: Proof of Real Integration</h2>
                 </div>
-                <p className="text-[13px] text-[#787774] leading-relaxed">
-                  This panel shows judges that your agents are making real API calls, not fake demos. Use this during
-                  your presentation to prove everything is real.
-                </p>
               </div>
 
               <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-3">
