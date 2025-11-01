@@ -55,7 +55,7 @@ export function LiveDemoPanel({ onSendEmail }: LiveDemoPanelProps) {
           <h2 className="text-xl font-bold text-[#37352F]">The "Send It to Me Right Now" Test</h2>
         </div>
         <p className="text-sm text-[#787774]">
-          The most powerful proof. Give us your email and we'll have our agent send you a personalized pricing quote in{" "}
+          Give us your email and we'll have our agent send you a personalized pricing quote in{" "}
           <span className="font-semibold text-[#2383E2]">30 seconds</span>.
         </p>
       </div>
