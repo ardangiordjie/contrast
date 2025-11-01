@@ -310,73 +310,73 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#FAFAFA]">
       {/* Header */}
       <header className="border-b border-[#E9E9E7] bg-white">
-        <div className="mx-auto max-w-[1400px] px-20 py-12">
+        <div className="mx-auto max-w-[1400px] px-8 lg:px-20 py-8 lg:py-10">
           <div className="flex items-start justify-between">
             <div>
-              <div className="flex items-center gap-3">
-                <span className="text-3xl">📸</span>
-                <h1 className="text-[32px] font-bold text-[#37352F]">Contrast</h1>
+              <div className="flex items-center gap-2.5">
+                <span className="text-2xl">📸</span>
+                <h1 className="text-[28px] font-semibold text-[#37352F] tracking-tight">Contrast</h1>
               </div>
-              <p className="mt-1 text-sm text-[#787774]">Photography Coordinator - Live Demo</p>
+              <p className="mt-1.5 text-[13px] text-[#787774]">Photography Coordinator — Live Demo</p>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-[#EDF2F7] px-3 py-1 text-sm font-medium text-[#2383E2]">
-                ⚡ {filteredClients.length} clients active
+            <div className="flex items-center gap-2.5">
+              <div className="rounded-md bg-[#EDF5FD] px-2.5 py-1 text-[13px] font-medium text-[#2383E2]">
+                ⚡ {filteredClients.length} active
               </div>
               <Button
                 variant={showProofPanel ? "default" : "outline"}
                 onClick={() => setShowProofPanel(!showProofPanel)}
-                className="border-[#E9E9E7]"
+                className="border-[#E9E9E7] h-8 text-[13px] font-medium shadow-none hover:bg-[#F7F6F3]"
               >
                 {showProofPanel ? "Hide" : "Show"} Proof Panel
               </Button>
             </div>
           </div>
 
-          <div className="mt-8 flex gap-4">
+          <div className="mt-6 flex gap-3">
             <Input
               type="text"
               placeholder="Search clients..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="max-w-xs border-[#E9E9E7] bg-white"
+              className="max-w-xs border-[#E9E9E7] bg-white h-9 text-[13px] shadow-none focus-visible:ring-1 focus-visible:ring-[#2383E2]"
             />
-            <div className="flex gap-2">
+            <div className="flex gap-1.5">
               <Button
                 variant={filterStage === "all" ? "default" : "outline"}
                 onClick={() => setFilterStage("all")}
-                className="border-[#E9E9E7]"
+                className="border-[#E9E9E7] h-9 text-[13px] font-medium shadow-none hover:bg-[#F7F6F3]"
               >
                 All
               </Button>
               <Button
                 variant={filterStage === "inquiry" ? "default" : "outline"}
                 onClick={() => setFilterStage("inquiry")}
-                className="border-[#E9E9E7]"
+                className="border-[#E9E9E7] h-9 text-[13px] font-medium shadow-none hover:bg-[#F7F6F3]"
               >
                 Inquiry
               </Button>
               <Button
                 variant={filterStage === "scheduled" ? "default" : "outline"}
                 onClick={() => setFilterStage("scheduled")}
-                className="border-[#E9E9E7]"
+                className="border-[#E9E9E7] h-9 text-[13px] font-medium shadow-none hover:bg-[#F7F6F3]"
               >
                 Scheduled
               </Button>
               <Button
                 variant={filterStage === "post-shoot" ? "default" : "outline"}
                 onClick={() => setFilterStage("post-shoot")}
-                className="border-[#E9E9E7]"
+                className="border-[#E9E9E7] h-9 text-[13px] font-medium shadow-none hover:bg-[#F7F6F3]"
               >
                 Post-Shoot
               </Button>
               <Button
                 variant={filterStage === "delivered" ? "default" : "outline"}
                 onClick={() => setFilterStage("delivered")}
-                className="border-[#E9E9E7]"
+                className="border-[#E9E9E7] h-9 text-[13px] font-medium shadow-none hover:bg-[#F7F6F3]"
               >
                 Delivered
               </Button>
@@ -386,32 +386,32 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="mx-auto max-w-[1400px] px-20 py-12">
+      <main className="mx-auto max-w-[1400px] px-8 lg:px-20 py-8 lg:py-10">
         {/* Proof Panel */}
         {showProofPanel && (
-          <div className="mb-8 space-y-6">
-            <div className="rounded-lg border-2 border-[#FFC700] bg-[#FFF9E6] p-6">
+          <div className="mb-8 space-y-5">
+            <div className="rounded-lg border border-[#FFC700] bg-[#FFFCF5] p-5 shadow-sm">
               <div className="mb-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl">🎯</span>
-                  <h2 className="text-xl font-bold text-[#37352F]">Demo Mode: Proof of Real Integration</h2>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="text-lg">🎯</span>
+                  <h2 className="text-[16px] font-semibold text-[#37352F]">Demo Mode: Proof of Real Integration</h2>
                 </div>
-                <p className="text-sm text-[#787774]">
+                <p className="text-[13px] text-[#787774] leading-relaxed">
                   This panel shows judges that your agents are making real API calls, not fake demos. Use this during
                   your presentation to prove everything is real.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-3">
                 <Button
                   onClick={() => handleWeatherCheck("Marcus Johnson", "San Francisco")}
-                  className="bg-[#FFC700] hover:bg-[#E6B300] text-[#37352F] font-semibold"
+                  className="bg-[#FFC700] hover:bg-[#E6B300] text-[#37352F] font-medium text-[13px] h-9 shadow-none"
                 >
                   🌤️ Demo: Perplexity Weather
                 </Button>
                 <Button
                   onClick={() => handleMemoryRecall("client-2", "Marcus Johnson")}
-                  className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-semibold"
+                  className="bg-[#9065B0] hover:bg-[#7C3AED] text-white font-medium text-[13px] h-9 shadow-none"
                 >
                   🧠 Demo: Hyperspell Memory
                 </Button>
@@ -426,39 +426,39 @@ export default function Home() {
                       agentAction: "AI Curation agent processed and selected best photos",
                     })
                   }}
-                  className="bg-[#0F7B6C] hover:bg-[#0D6B5E] text-white font-semibold"
+                  className="bg-[#0F7B6C] hover:bg-[#0D6B5E] text-white font-medium text-[13px] h-9 shadow-none"
                 >
                   📸 Demo: Photo Curation
                 </Button>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
               <LiveDemoPanel onSendEmail={handleSendLiveEmail} />
               <ApiActivityLog calls={apiCalls} maxHeight="400px" />
             </div>
 
             <BeforeAfterTracker changes={stateChanges} />
 
-            <div className="border-t border-[#E9E9E7] pt-6">
-              <div className="rounded-lg bg-[#F7F6F3] p-4 text-sm text-[#37352F]">
-                <div className="font-semibold mb-2">💡 How to use this for your demo:</div>
-                <div className="space-y-1 text-xs">
+            <div className="border-t border-[#E9E9E7] pt-5">
+              <div className="rounded-md bg-[#F7F6F3] p-4 text-[13px] text-[#37352F]">
+                <div className="font-semibold mb-2 text-[14px]">💡 How to use this for your demo:</div>
+                <div className="space-y-1.5 text-[12px] leading-relaxed text-[#787774]">
                   <div>
-                    1. <strong>Open DevTools:</strong> Press F12 and go to Network tab before starting your demo
+                    <span className="font-medium text-[#37352F]">1. Open DevTools:</span> Press F12 and go to Network tab before starting your demo
                   </div>
                   <div>
-                    2. <strong>Live Email Test:</strong> Have a judge enter their email, show them the API call
+                    <span className="font-medium text-[#37352F]">2. Live Email Test:</span> Have a judge enter their email, show them the API call
                     happening in real-time
                   </div>
                   <div>
-                    3. <strong>API Activity Log:</strong> Point to timestamps and responses to prove it's not fake
+                    <span className="font-medium text-[#37352F]">3. API Activity Log:</span> Point to timestamps and responses to prove it's not fake
                   </div>
                   <div>
-                    4. <strong>Before/After:</strong> Show state changes that prove agents actually did something
+                    <span className="font-medium text-[#37352F]">4. Before/After:</span> Show state changes that prove agents actually did something
                   </div>
                   <div>
-                    5. <strong>The "Holy Shit" Moment:</strong> When the judge checks their phone and sees your email,
+                    <span className="font-medium text-[#37352F]">5. The "Holy Shit" Moment:</span> When the judge checks their phone and sees your email,
                     you've won
                   </div>
                 </div>
@@ -469,18 +469,18 @@ export default function Home() {
 
         {/* Client Grid */}
         <div>
-          <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-[#37352F]">Active Clients</h2>
+          <div className="mb-5 flex items-center justify-between">
+            <h2 className="text-[16px] font-semibold text-[#37352F]">Active Clients</h2>
             {!showProofPanel && (
               <button
                 onClick={() => setShowProofPanel(true)}
-                className="text-sm text-[#2383E2] hover:underline font-medium"
+                className="text-[13px] text-[#2383E2] hover:text-[#1a6bc4] font-medium transition-colors"
               >
                 Show Demo Proof Panel →
               </button>
             )}
           </div>
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
             {filteredClients.map((client) => (
               <ClientCard key={client.id} client={client} onStageChange={handleStageChange} />
             ))}
